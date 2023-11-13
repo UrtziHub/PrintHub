@@ -1,0 +1,6 @@
+#burger > div{
+    width: 35px;
+    height: 3px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
