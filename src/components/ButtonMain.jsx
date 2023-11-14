@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export default function ButtonMain({text}){
     return(
-        <button className="text-white bg-[#2745ad] py-3 px-10 rounded-lg">{text}</button>
+        <button className="bg-blue-950 px-8 py-2 text-white rounded-lg">{text}</button>
     )
 }
 ButtonMain.propTypes = {
