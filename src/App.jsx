@@ -6,6 +6,9 @@ import NewsSection from "./components/index/NewsSection.jsx";
 import video from "./assets/video2.mp4";
 import ButtonMain from "./components/ButtonMain.jsx";
 import {useEffect, useState} from "react";
+import tree from './assets/dead-tree.png'
+import pice from './assets/piezas.jpg';
+import blender from './assets/blender.jpg'
 function App() {
     const [headerBgColor, setHeaderBgColor] = useState('transparent');
     const [headerTextColor, setHeaderTextColor] = useState('white');
@@ -22,12 +25,20 @@ function App() {
             setHeaderBgColor('transparent');
             setHeaderTextColor('white');
         }
+
+        const partsSection = document.getElementById('partsSectionIndex');
+        if (partsSection) {
+            const partsSectionPosition = partsSection.offsetTop;
+            if (scrollPosition > partsSectionPosition) {
+                setHeaderBgColor('blue-950'); // Cambia 'tuColor' al color que desees
+                setHeaderTextColor('white'); // Cambia 'tuColorDeTexto' al color que desees
+            }
+        }
     };
 
     // Agregar el listener de scroll cuando se monta el componente
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
         // Limpiar el listener cuando el componente se desmonta
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -39,23 +50,28 @@ function App() {
           <div className="relative z-30">
               <Header bgColor={headerBgColor} textColor={headerTextColor} />
           </div>
-          <section className="bg-black w-screen h-screen relative overflow-hidden pt-20 flex flex-col items-center justify-between">
+          <section className="bg-black w-screen h-screen relative overflow-hidden pt-20 flex flex-col items-center justify-around">
               <header className="z-20 relative">
                   <div className={`flex flex-col items-center pt-10 text-white md:pt-20 pb-5`}>
-                      <h1 className="text-4xl md:text-5xl">SCAN AND PRINT</h1>
-                      <h1 className="text-5xl md:text-6xl font-bold mb-10">RIGHT NOW</h1>
+                      <h1 className="text-5xl md:text-6xl">SCAN AND PRINT</h1>
+                      <h1 className="text-6xl md:text-8xl font-bold mb-10 ">RIGHT NOW</h1>
 
                   </div>
               </header>
-              <footer className="z-20 relative mb-10">
-                  <button className="border-2 font-bold border-white text-white px-10 py-2">Scan now</button>
+              <footer className="z-20 relative mb-40">
+                  <a href="#partsSectionIndex" className="break-normal hover:border-[1px] rounded text-black bg-white hover:bg-transparent transition ease-in-out duration-300 font-semibold hover:border-white hover:text-white px-12 py-3">Scan now</a>
               </footer>
 
               <div className="absolute top-0 bottom-0 z-10">
-                  <video autoPlay={true} muted={true} loop={true}  className="h-screen w-screen object-cover brightness-50" src={video}></video>
+                  <video autoPlay={true} muted={true} loop={true}  className="h-screen w-screen object-cover brightness-[0.20]" src={video}></video>
               </div>
           </section>
           <PartsSection/>
+          <NewsSection/>
+          <footer className="p-10 bg-blue-950 flex flex-col justify-center items-center gap-4 mx-4 rounded-t">
+              <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsam numquam sequi!</p>
+              <p className="text-white">Copyright © Urtzi Lusarreta</p>
+          </footer>
       </>
   )
 }

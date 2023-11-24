@@ -23,8 +23,8 @@ export default function PartsSection(){
         },
     ];
     return(
-        <section className="text-blue-950">
-            <div className="mx-2 flex flex-col items-center pt-20">
+        <section id="partsSectionIndex" className="text-blue-950 pt-36">
+            <div className="mx-2 flex flex-col items-center">
                 <h1 className="text-3xl">GET THE HIGHEST QUALITY FOR YOUR 3D PARTS</h1>
                 <h1 className="text-4xl font-bold">WITH THE BEST SERVICE</h1>
             </div>
