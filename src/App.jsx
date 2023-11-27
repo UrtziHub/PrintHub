@@ -94,9 +94,20 @@ function App() {
                           <h1 className="text-lg md:text-xl mt-2 md:mt-4 font-semibold">Full plan</h1>
                           <p className="mt-2 md:mt-4">Join the VIP team and acquire the benefits that come with it.</p>
                           <div className="mt-2 md:mt-4">
-                              <div className="flex items-center">
-                                  <div className="rounded-full bg-white w-3 h-3 md:w-5 md:h-5 mr-2"></div>
-                                  <p className="font-semibold">High priority orders</p>
+                              <div className="flex flex-col gap-2">
+                                  <div className="flex">
+                                      <div className="rounded-full bg-white w-3 h-3 md:w-5 md:h-5 mr-2"></div>
+                                      <p className="font-semibold">High priority orders</p>
+                                  </div>
+                                  <div className="flex">
+                                      <div className="rounded-full bg-white w-3 h-3 md:w-5 md:h-5 mr-2"></div>
+                                      <p className="font-semibold">Order discounts</p>
+                                  </div>
+                                  <div className="flex">
+                                      <div className="rounded-full bg-white w-3 h-3 md:w-5 md:h-5 mr-2"></div>
+                                      <p className="font-semibold">No shipping cost</p>
+                                  </div>
+
                               </div>
                           </div>
                           <div className="mt-4 md:mt-8">
@@ -106,14 +117,16 @@ function App() {
                   </div>
               </div>
           </section>
-          <footer className="p-10 bg-blue-950 flex flex-col justify-center items-center gap-4 ">
-              <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsam numquam sequi!</p>
-              <p className="text-white">Copyright © Urtzi Lusarreta</p>
+          <footer className="p-10 bg-blue-950 flex justify-around items-center gap-4 ">
               <div>
-                  <input type="text" name="" id=""/>
-                  <input type="text"/>
-                  <input type="text"/>
-                  <button>Send message</button>
+                  <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsam numquam sequi!</p>
+                  <p className="text-white">Copyright © Urtzi Lusarreta</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                  <input type="text" placeholder="Name"/>
+                  <input type="text" placeholder="E-Mail"/>
+                  <input type="text" placeholder="Comment"/>
+                  <button className="bg-white px-8 py-2 rounded-xl">Send message</button>
               </div>
           </footer>
       </>
