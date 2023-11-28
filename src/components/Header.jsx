@@ -1,4 +1,5 @@
-import logo from '/logo.svg'
+import logo from '/logoWhite.svg'
+import logoblue from '/logoBlue.svg'
 import './Header.css'
 import PropTypes from "prop-types";
 import ButtonMain from "./ButtonMain.jsx";
@@ -10,8 +11,8 @@ export default function Header({bgColor, textColor}){
     return(
         <>
             <header className={` items-center flex py-2 md:px-32 px-10 w-full justify-between text-${textColor} fixed top-0 z-30 bg-${bgColor} transition ease-in-out duration-500`}>
-                <div className="justify-start flex gap-2 items-center md:flex md:flex-1 md:items-center">
-                    {<img src={logo} alt="LogoType Image"/>}
+                <div className="justify-start flex gap-8 items-center md:flex md:flex-1 md:items-center">
+                    {<img src={bgColor==='white'?logo:logoblue} alt="LogoType Image"/>}
                     <a href="/" className="text-4xl font-bold">PrintHub</a>
                 </div>
 
